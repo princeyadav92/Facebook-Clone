@@ -1,0 +1,151 @@
+/* Main CSS file for Facebook Clone */
+:root {
+    --primary-color: #1877f2;
+    --primary-hover: #166fe5;
+    --secondary-color: #42b72a;
+    --secondary-hover: #36a420;
+    --text-color: #1c1e21;
+    --text-light: #65676b;
+    --background-color: #f0f2f5;
+    --white: #ffffff;
+    --border-color: #dddfe2;
+    --error-color: #ff3b30;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.main-content {
+    padding-top: 70px;
+    min-height: 100vh;
+    padding-bottom: 30px;
+}
+
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: var(--error-color);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 16px 0;
+    text-align: center;
+}
+
+.empty-feed-message {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    text-align: center;
+    margin: 16px 0;
+}
+
+.empty-feed-message h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.empty-feed-message p {
+    color: var(--text-light);
+    margin-bottom: 16px;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-button, .signup-button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.login-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.login-button:hover {
+    background-color: var(--primary-hover);
+    text-decoration: none;
+}
+
+.signup-button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.signup-button:hover {
+    background-color: var(--secondary-hover);
+    text-decoration: none;
+}
+
+.feed-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .feed-container {
+        padding: 0 12px;
+    }
+}
+  
