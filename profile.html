@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Facebook Clone</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/post.css">
+    <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">Facebook Clone</a>
+            </div>
+            <div class="navbar-menu" id="desktop-menu">
+                <a href="index.html" class="navbar-item">Home</a>
+                <a href="profile.html" class="navbar-item active" id="profile-link">Profile</a>
+                <a href="login.html" class="navbar-item" id="login-link">Login</a>
+                <a href="register.html" class="navbar-item" id="register-link">Sign Up</a>
+                <button class="navbar-item hidden" id="logout-button">Logout</button>
+            </div>
+            <div class="mobile-menu-button" id="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu hidden" id="mobile-menu">
+            <a href="index.html" class="mobile-menu-item">Home</a>
+            <a href="profile.html" class="mobile-menu-item active" id="mobile-profile-link">Profile</a>
+            <a href="login.html" class="mobile-menu-item" id="mobile-login-link">Login</a>
+            <a href="register.html" class="mobile-menu-item" id="mobile-register-link">Sign Up</a>
+            <button class="mobile-menu-item hidden" id="mobile-logout-button">Logout</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <span id="profile-avatar-letter">?</span>
+                </div>
+                <div class="profile-info">
+                    <h1 id="profile-name">Loading...</h1>
+                    <p id="profile-username">@username</p>
+                    <p id="profile-joined">Joined: Loading...</p>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="profile-tab active" data-tab="posts">Posts</button>
+                <button class="profile-tab" data-tab="about">About</button>
+                <button class="profile-tab" data-tab="friends">Friends</button>
+                <button class="profile-tab" data-tab="photos">Photos</button>
+            </div>
+
+            <div id="profile-content" class="profile-content">
+                <div id="posts-tab" class="profile-tab-content active">
+                    <div id="profile-post-form-container" class="hidden">
+                        <div class="post-form">
+                            <textarea id="profile-post-content" placeholder="What's on your mind?"></textarea>
+                            <div class="post-form-actions">
+                                <input type="file" id="profile-post-image" class="hidden">
+                                <label for="profile-post-image" class="image-upload-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 16l4-4 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Photo
+                                </label>
+                                <button id="profile-post-submit-button">Post</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="profile-loading-indicator" class="loading-indicator">
+                        <div class="spinner"></div>
+                        <p>Loading posts...</p>
+                    </div>
+
+                    <div id="profile-error-message" class="error-message hidden"></div>
+
+                    <div id="profile-empty-posts-message" class="empty-feed-message hidden">
+                        <h2>No Posts Yet</h2>
+                        <p>This user hasn't posted anything yet.</p>
+                    </div>
+
+                    <div id="profile-posts-container" class="posts-container"></div>
+                </div>
+
+                <div id="about-tab" class="profile-tab-content">
+                    <div class="about-section">
+                        <h2>About</h2>
+                        <p id="about-content">This user hasn't added any information yet.</p>
+                    </div>
+                </div>
+
+                <div id="friends-tab" class="profile-tab-content">
+                    <div class="friends-section">
+                        <h2>Friends</h2>
+                        <div id="friends-container" class="friends-container">
+                            <p>No friends to display.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="photos-tab" class="profile-tab-content">
+                    <div class="photos-section">
+                        <h2>Photos</h2>
+                        <div id="photos-container" class="photos-container">
+                            <p>No photos to display.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+                      </html>
+                                          
