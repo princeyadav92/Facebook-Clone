@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Clone</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/post.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">Facebook Clone</a>
+            </div>
+            <div class="navbar-menu" id="desktop-menu">
+                <a href="index.html" class="navbar-item">Home</a>
+                <a href="profile.html" class="navbar-item" id="profile-link">Profile</a>
+                <a href="login.html" class="navbar-item" id="login-link">Login</a>
+                <a href="register.html" class="navbar-item" id="register-link">Sign Up</a>
+                <button class="navbar-item hidden" id="logout-button">Logout</button>
+            </div>
+            <div class="mobile-menu-button" id="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu hidden" id="mobile-menu">
+            <a href="index.html" class="mobile-menu-item">Home</a>
+            <a href="profile.html" class="mobile-menu-item" id="mobile-profile-link">Profile</a>
+            <a href="login.html" class="mobile-menu-item" id="mobile-login-link">Login</a>
+            <a href="register.html" class="mobile-menu-item" id="mobile-register-link">Sign Up</a>
+            <button class="mobile-menu-item hidden" id="mobile-logout-button">Logout</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="feed-container">
+            <div id="post-form-container" class="hidden">
+                <div class="post-form">
+                    <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+                    <div class="post-form-actions">
+                        <input type="file" id="post-image" class="hidden">
+                        <label for="post-image" class="image-upload-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 16l4-4 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Photo
+                        </label>
+                        <button id="post-submit-button">Post</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading feed...</p>
+            </div>
+
+            <div id="error-message" class="error-message hidden"></div>
+
+            <div id="empty-feed-message" class="empty-feed-message hidden">
+                <h2>Welcome to Facebook Clone!</h2>
+                <p id="empty-feed-text">Please log in to see your personalized feed and interact with posts.</p>
+                <div id="auth-buttons" class="auth-buttons">
+                    <a href="login.html" class="login-button">Log in</a>
+                    <span>or</span>
+                    <a href="register.html" class="signup-button">Sign up</a>
+                </div>
+            </div>
+
+            <div id="posts-container" class="posts-container"></div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
